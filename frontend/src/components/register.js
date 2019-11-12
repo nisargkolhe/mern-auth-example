@@ -54,10 +54,6 @@ class Home extends Component {
       try {
         const res = await axios.post("/api/register", userData);
 
-        // Save to localStorage
-        // Set token to localStorage
-        const { token } = res.data;
-
         this.setState({ loading: false, msg: "Registration Successful." });
       } catch (err) {
         console.log(err);
