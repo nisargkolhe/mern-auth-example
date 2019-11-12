@@ -29,12 +29,9 @@ class Home extends Component {
       });
     } else if (this.state.loading) {
       try {
-        const response = await axios.get(
-          "http://localhost:3000/api/protected",
-          {
-            headers: { Authorization: `Bearer ${token}` }
-          }
-        );
+        const response = await axios.get("/api/protected", {
+          headers: { Authorization: `Bearer ${token}` }
+        });
         console.log(response.data);
         this.setState({
           loading: false,
